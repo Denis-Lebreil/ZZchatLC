@@ -22,6 +22,7 @@
 	<body>
 		<div id="container">
 			<div id="header">
+				<!-- the dynamic language selector -->
 				<div id="language_selector"><?= $lang['LANG'] ?></div>
 				<div id="language_item"></div>
 			</div>
