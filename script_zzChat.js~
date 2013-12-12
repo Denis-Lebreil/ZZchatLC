@@ -13,12 +13,9 @@ function getLanguages()
 }
 
 
-<<<<<<< HEAD
-=======
 
 
 getLanguages();
->>>>>>> alpha0.9
 			
 $(document).ready(
 	function()
@@ -32,11 +29,7 @@ $(document).ready(
 					var languages = '';
 					
 										
-<<<<<<< HEAD
-					getLanguages();
-=======
 					
->>>>>>> alpha0.9
 					
 					var language_number = language_list.length;
 					for(var i=0;i<language_number;i++)
@@ -60,9 +53,6 @@ $(document).ready(
 					language_menu_open = false;
 				}
 			}
-<<<<<<< HEAD
-		);
-=======
 		);
 		
 		/*$("#connection_button").click(
@@ -113,13 +103,10 @@ $(document).ready(
 		   }
 		   //connect()
 		   );*/
->>>>>>> alpha0.9
 	}
 );
 
 
-<<<<<<< HEAD
-=======
 function connect()
 {
    var user = $("#user").val();
@@ -142,7 +129,7 @@ function connect()
       
       var posting = $.get("conn2.php",{user:user});
       posting.done(
-         function(){
+         function(data){
             alert('dada');
             }
             );
@@ -150,4 +137,3 @@ function connect()
 }
 
 
->>>>>>> alpha0.9

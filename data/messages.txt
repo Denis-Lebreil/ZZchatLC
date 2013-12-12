@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 bpojsd
 lhsdf
 qsdf
+=======
+...
+ba : 564<br/>ba : tyfy<br/>ba : qsfd<br/>ba : aze<br/>ba : 12<br/>ba : 581<br/> : <br/> : <br/>pierre : je m'appelle pierre<br/>un enfoiré : salut pierre !<br/>un enfoiré : ça te dit un petit dîner ce soir ?<br/>2 : 43<br/>21 : 546<br/>21 : 546<br/>21 : 546<br/>21 : 546<br/>21 : 546<br/>21 : 546<br/>21 : 546<br/>21 : 546<br/>21 : 546<br/>21 : 546<br/>21 : 546<br/>21 : 546<br/>21 : 546<br/>21 : 546<br/>21 : 546<br/>21 : 546<br/>21 : 546<br/>21 : 546<br/>21 : 546<br/>21 : 546<br/>21 : 546<br/>78 : qjsfjkls<br/>
+>>>>>>> alpha0.9

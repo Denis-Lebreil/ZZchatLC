@@ -32,22 +32,14 @@ function DisplayPeople()
 	$.get("readPeople.php", 
 		function(data)
 		{
-<<<<<<< HEAD
-			var people = data.split;
-=======
 			var people = data.split('\n');
->>>>>>> alpha0.9
 			var people_number = people.length;
 			data = '';
 			
 			for(var i=0;i<people_number;i++)
 			{
 				data += '<li class="person">'
-<<<<<<< HEAD
-					 +  lines[i]
-=======
 					 +  people[i]
->>>>>>> alpha0.9
 					 +  '</li>';
 			}
 			$("#list_people").html(data);
@@ -72,12 +64,7 @@ function DisplayMessages()
 			}
 			$("#chat_text").html(data);
 		}
-<<<<<<< HEAD
 	);
-=======
-	);
-	$("#chat_window").scrollTop($("#chat_window")[0].scrollHeight);
->>>>>>> alpha0.9
 }
 
 function SendPrivateMessage(person)
@@ -107,23 +94,18 @@ function getLanguages()
 }
 
 getLanguages();
-<<<<<<< HEAD
 			
 $(document).ready(
 	function()
 	{
-=======
-
-
-			
-$(document).ready(
-	function()
-	{
+	   var Person;
 	   
-	   var user = $("#user").text();
+	   var user = $("#user").val();
+	   user = "ba";
+	   
+	   alert('CONNERIE');
 	   
 	   
->>>>>>> alpha0.9
 		$("#language_selector").click(
 			function()
 			{
@@ -132,11 +114,6 @@ $(document).ready(
 					var url = window.location.pathname;
 					var languages = '';
 					
-<<<<<<< HEAD
-										
-					
-=======
->>>>>>> alpha0.9
 					
 					var language_number = language_list.length;
 					for(var i=0;i<language_number;i++)
@@ -161,40 +138,30 @@ $(document).ready(
 				}
 			}
 		);
-<<<<<<< HEAD
-		setInterval("DisplayMessages()", 100);
-	}
-	
-	
-=======
 		setInterval("DisplayMessages()", 1000);
 		setInterval("DisplayPeople()", 1000);
 		
 		$('#send_message').on('submit', function() 
 		{
 		    // je récupère les valeurs
-		    //var wPerson = user;;// variable indiquant le nom d'utilisateur dans tout le script
+		    var wPerson = "ba";
+		    
+		    Person = wPerson;// variable indiquant le nom d'utilisateur dans tout le script
 		    
 		    var wMessage = $('#wMessage').val();
 		    
 		    // je vérifie une première fois pour ne pas lancer la requête HTTP
 		    // si je sais que le PHP renverra une erreur
-		    if(wMessage == '')
+		    if(wPerson == '' || wMessage == '')
 		    {
-		        /* TODO LANG*/
 		        alert('Les champs doivent êtres remplis');
 		    } 
-		    else if(user == '')
-		    {
-		        /* TODO LANG*/
-		        alert('Vous n\'êtes pas connecté, vous pouvez seulement observer');
-		    }
 		    else 
 		    {
 		        // appel Ajax
 		        $.post("writeMessage.php",
 		        {
-		        	wPerson:user,
+		        	wPerson:wPerson,
 		        	wMessage:wMessage
 		        });
 		    }
@@ -209,20 +176,13 @@ $(document).ready(
        	   alert('deconnexion');
        	   $.post("disconnect.php",
        	   {
-       	      dPerson:user
+       	      dPerson:Person
        	   });
        	   
        	}
       );
-    $(window).on('unload', function()
-      {
-      $.post("disconnect.php",
-         {
-       	      dPerson:user
-         });
-      });	
+    	
 	}
->>>>>>> alpha0.9
 );
 
 

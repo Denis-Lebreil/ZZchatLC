@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 
 <html>
-<<<<<<< HEAD
-	<head>
-	
-=======
 	<head>
 	   
->>>>>>> alpha0.9
 		<?php 
 		$language=$_GET['lang'];
 		if(!isset($language) || empty($language))
@@ -27,17 +22,6 @@
 	<body>
 		<div id="container">
 			<div id="header">
-<<<<<<< HEAD
-				<!-- the dynamic language selector -->
-				<div id="language_selector"><?= $lang['LANG'] ?></div>
-				<div id="language_item"></div>
-			</div>
-			
-			<div id="main">
-				<div id="chat_window">
-					<ul id="chat_text">
-					</ul>
-=======
 				<div id="language_selector"><?= $lang['LANG'] ?></div>
 				<div id="language_item"></div>
 				<form id="disconnect" action="zzChat.php" method="post">
@@ -57,7 +41,6 @@
 							<input type="submit" id="send_button" value=">" />
 					</form>
 					
->>>>>>> alpha0.9
 				</div>
 				<div id="people_window">
 					<h2><?= $lang['PEOPLE'] ?></h2>
@@ -68,19 +51,11 @@
 			
 			<div id="footer">
 			</div>
-<<<<<<< HEAD
-		</div>
-	</body>
-	
-	
-	<script type="text/javascript" src="script_zzChat2.js"></script> 
-=======
 		</div>
 		<script type="text/javascript" src="script_zzChat2.js"></script> 
 	</body>
 	
 	
 	
->>>>>>> alpha0.9
 	
 </html>
