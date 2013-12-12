@@ -76,10 +76,14 @@ $(document).ready(
 		   function()
 		   {
 		      var user = $("#user").val();
-		      if(user == '') 
+		      alert(user);
+		      
+		      //user = "ba";
+		      
+		      if(user == '')
 		      {
 		          alert('Les champs doivent êtres remplis');
-		      } 
+		      }
 		      else 
 		      {
 		         // appel Ajax

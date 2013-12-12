@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-	
+	   
 		<?php 
 		$language=$_GET['lang'];
 		if(!isset($language) || empty($language))
@@ -27,10 +27,12 @@
 				<form id="disconnect" action="zzChat.php" method="post">
 							<input type="submit" id="disconnect_button" value="Disconnect" />
 			   </form>
+			   
 			</div>
-			
 			<div id="main">
 				<div id="chat_window">
+				   <!-- TODO A METTRE DANS LANG -->
+				   <div>Au revoir </div><div id="user"><?= $_POST['user'] ?></div>
 					<ul id="chat_text">
 					</ul>
 					

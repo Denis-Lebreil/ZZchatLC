@@ -1,5 +1,5 @@
 <?php
-	readdir('data/users/');
+	//readdir('data/users/');
 ?><?php
 	
 if($handle = opendir('data/users'))
@@ -8,14 +8,15 @@ if($handle = opendir('data/users'))
 	{
     	if($entry!="." && $entry!="..")
     	{
-    		echo "-";
     		$person = fopen($entry, "r");
-    		if(isset($person) && !isempty($person))
-    		{
-    			echo "$entry";
-    		}
+    		/*if(!empty($person))
+    		{*/
+    		   $entry = substr($entry, 5);
+    			echo "$entry"."\n";
+    		//}
     	}
     }    
 	closedir($handle);
 }
+
 ?>

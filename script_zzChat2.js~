@@ -42,7 +42,7 @@ function DisplayPeople()
 					 +  people[i]
 					 +  '</li>';
 			}
-			$("#list_people").append(data);
+			$("#list_people").html(data);
 		}
 	);
 }
@@ -98,7 +98,10 @@ getLanguages();
 $(document).ready(
 	function()
 	{
-	   var Person;
+	   
+	   var user = $("#user").text();
+	   
+	   
 		$("#language_selector").click(
 			function()
 			{
@@ -106,8 +109,6 @@ $(document).ready(
 				{
 					var url = window.location.pathname;
 					var languages = '';
-					
-										
 					
 					
 					var language_number = language_list.length;
@@ -133,41 +134,49 @@ $(document).ready(
 				}
 			}
 		);
-		setInterval("DisplayMessages()", 100);
+		setInterval("DisplayMessages()", 1000);
+		setInterval("DisplayPeople()", 1000);
+		
 		$('#send_message').on('submit', function() 
 		{
 		    // je récupère les valeurs
-		    var wPerson = "user";
-		    
-		    Person = wPerson;// variable indiquant le nom d'utilisateur dans tout le script
+		    //var wPerson = user;;// variable indiquant le nom d'utilisateur dans tout le script
 		    
 		    var wMessage = $('#wMessage').val();
 		    
 		    // je vérifie une première fois pour ne pas lancer la requête HTTP
 		    // si je sais que le PHP renverra une erreur
-		    if(wPerson == '' || wMessage == '')
+		    if(wMessage == '')
 		    {
+		        /* TODO LANG*/
 		        alert('Les champs doivent êtres remplis');
 		    } 
+		    else if(user == '')
+		    {
+		        /* TODO LANG*/
+		        alert('Vous n\'êtes pas connecté, vous pouvez seulement observer');
+		    }
 		    else 
 		    {
 		        // appel Ajax
 		        $.post("writeMessage.php",
 		        {
-		        	wPerson:wPerson,
+		        	wPerson:user,
 		        	wMessage:wMessage
 		        });
 		    }
+		    
+		    
 		    return false; 
     	});
-    	DisplayPeople();
+    	
     	$("#disconnect").on("submit", 
        	function()
        	{
        	   alert('deconnexion');
-       	   /*$.post("disconnect.php",
+       	   $.post("disconnect.php",
        	   {
-       	      dPerson:Person
+       	      dPerson:user
        	   });
        	   
        	}

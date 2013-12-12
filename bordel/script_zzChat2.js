@@ -98,8 +98,12 @@ getLanguages();
 $(document).ready(
 	function()
 	{
+	   var Person;
 	   
-	   var user = $("#user").text();
+	   var user = $("#user").val();
+	   user = "ba";
+	   
+	   alert('CONNERIE');
 	   
 	   
 		$("#language_selector").click(
@@ -140,28 +144,24 @@ $(document).ready(
 		$('#send_message').on('submit', function() 
 		{
 		    // je récupère les valeurs
-		    //var wPerson = user;;// variable indiquant le nom d'utilisateur dans tout le script
+		    var wPerson = "ba";
+		    
+		    Person = wPerson;// variable indiquant le nom d'utilisateur dans tout le script
 		    
 		    var wMessage = $('#wMessage').val();
 		    
 		    // je vérifie une première fois pour ne pas lancer la requête HTTP
 		    // si je sais que le PHP renverra une erreur
-		    if(wMessage == '')
+		    if(wPerson == '' || wMessage == '')
 		    {
-		        /* TODO LANG*/
 		        alert('Les champs doivent êtres remplis');
 		    } 
-		    else if(user == '')
-		    {
-		        /* TODO LANG*/
-		        alert('Vous n\'êtes pas connecté, vous pouvez seulement observer');
-		    }
 		    else 
 		    {
 		        // appel Ajax
 		        $.post("writeMessage.php",
 		        {
-		        	wPerson:user,
+		        	wPerson:wPerson,
 		        	wMessage:wMessage
 		        });
 		    }
@@ -176,7 +176,7 @@ $(document).ready(
        	   alert('deconnexion');
        	   $.post("disconnect.php",
        	   {
-       	      dPerson:user
+       	      dPerson:Person
        	   });
        	   
        	}
