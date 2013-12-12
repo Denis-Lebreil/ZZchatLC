@@ -15,7 +15,7 @@
 	}*/
    
    $handle = fopen('/home/etud/connier/public_html/zzChat/data/users/fic'.$_POST['user'], 'w') or die('Cannot open file:  '.'data/users/'.$_POST['user']);
-   $handle = fopen('data/users/bonjour.txt', 'w') or die ('Cannot open file:  '.'data/users/bonjour.txt');
+   $handle = fopen('data/users/aurevoir.txt', 'w') or die ('Cannot open file:  '.'data/users/bonjour.txt');
    fclose($handle);
    
 ?>

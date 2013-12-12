@@ -29,7 +29,7 @@
 					<h2><?= $lang['TITLE'] ?></h2>
 					<h3><?= $lang['GREETING'] ?></h3>
 					<!-- todo : zzChat15.php, pseudo vide, redirection -->
-					<form id="connection" action="zzChat2.php" method="post">
+					<form id="connection" onsubmit="connect()" method="post">
 							<input type="text" id="user" name="user" /><br/>
 							<input type="submit" id="connection_button" value="GO" />
 							

@@ -12,6 +12,9 @@ function getLanguages()
 	);
 }
 
+
+
+
 getLanguages();
 			
 $(document).ready(
@@ -72,29 +75,65 @@ $(document).ready(
 		      }
 		   }
 		);*/
-		$("#connection").on('submit',
+		/*$("#connection").on('submit', //connect() );
 		   function()
 		   {
 		      var user = $("#user").val();
-		      if(user == '') 
+		      
+		      
+		      //user = "ba";
+		      
+		      if(user == '')
 		      {
-		          alert('Les champs doivent êtres remplis');
-		      } 
+		         // TODO LANG 
+		          alert('Vous vous connectez en observateur.');
+		      }
 		      else 
 		      {
 		         // appel Ajax
 		         $.post("connect.php",
 		         {
 		         	user:user
-		         },
-		         /*function(data,status){
-                     alert("Data: " + data + "\nStatus: " + status);
-                  }*/
+		         }, function (data)
+		            {
+                     alert("Data: " + data);
+                  }
 	            );
 		      }
 		   }
-		);
+		   //connect()
+		   );*/
 	}
 );
+
+
+function connect()
+{
+   var user = $("#user").val();
+   
+   alert('appel : connect()');
+   
+   //user = "ba";
+   
+   if(user == '')
+   {
+      /* TODO LANG */
+       alert('Vous vous connectez en observateur.');
+   }
+   else 
+   {
+      // appel Ajax
+      //$.post("connect.php",{user:user},function(data){alert("Data:");});
+      //$.post( "connect.php", { user:user }).done(function( data ) {alert( "Data Loaded: " + data );});
+      //$.post("connect.php",{user:user},alert("Data:"));
+      
+      var posting = $.get("conn2.php",{user:user});
+      posting.done(
+         function(data){
+            alert('dada');
+            }
+            );
+   }
+}
 
 

@@ -65,6 +65,7 @@ function DisplayMessages()
 			$("#chat_text").html(data);
 		}
 	);
+	$("#chat_window").scrollTop($("#chat_window")[0].scrollHeight);
 }
 
 function SendPrivateMessage(person)
@@ -94,6 +95,8 @@ function getLanguages()
 }
 
 getLanguages();
+
+
 			
 $(document).ready(
 	function()
@@ -181,7 +184,13 @@ $(document).ready(
        	   
        	}
       );
-    	
+    $(window).on('unload', function()
+      {
+      $.post("disconnect.php",
+         {
+       	      dPerson:user
+         });
+      });	
 	}
 );
 

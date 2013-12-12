@@ -1,21 +1,26 @@
 <?php
-   /*echo $_POST['wPerson'].' : '.$_POST['wMessage'];
-	if(!empty($_POST['wMperson']) && !empty($_POST['wMmessage']))
-	{
-		$handle = fopen('data/messages.txt', 'a');
-		
-		if(!empty($handle))
-		{
-			$text = $_POST["wPerson"].' : '.$_POST["wMessage"].'<br/>';
-			fwrite($handle, $text);  DOUBLES QUOTES? 
-         
-			fclose($handle);
-		}
-		
-	}*/
+
+   if(! empty($_GET['user']))
+   {
    
-   $handle = fopen('/home/etud/connier/public_html/zzChat/data/users/fic'.$_POST['user'], 'w') or die('Cannot open file:  '.'data/users/'.$_POST['user']);
-   $handle = fopen('data/users/aurevoir.txt', 'w') or die ('Cannot open file:  '.'data/users/bonjour.txt');
-   fclose($handle);
-   
+      $handle = fopen('data/users/user_'.$_GET['user'], 'w') or die('Cannot open file:  '.'data/users/'.$_GET['user']);
+      $data = fread($handle, 512);
+      
+      if(empty($data))
+      {
+         echo "Connection";
+         fwrite($handle, $_GET['user']);
+      }
+      else
+      {
+         echo "User already connected";
+      }
+      
+      fclose($handle);
+   }
+   else
+   {
+      echo "Error";
+   }
 ?>
+
