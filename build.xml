@@ -9,7 +9,7 @@
 
  <target name="phpunit">
   <exec dir="${basedir}" executable="phpunit" failonerror="true">
-   <arg line="--log-xml ${basedir}/build/logs/phpunit.xml Tests" />
+   <arg line="--log-junit ${basedir}/build/logs/phpunit.xml Tests" />
   </exec>
  </target>
 
