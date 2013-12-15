@@ -6,8 +6,10 @@ class zzChatTest extends PHPUnit_Framework_TestCase
 	 
 	 }
 	 
-    public function test()
+    public function testTrue()
     {
+    $testtrue = true;
+    $this->assertTrue($testtrue);
 
 	return false;
     }
