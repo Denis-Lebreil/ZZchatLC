@@ -32,22 +32,14 @@ function DisplayPeople()
 	$.get("readPeople.php", 
 		function(data)
 		{
-<<<<<<< HEAD
-			var people = data.split;
-=======
 			var people = data.split('\n');
->>>>>>> alpha0.9
 			var people_number = people.length;
 			data = '';
 			
 			for(var i=0;i<people_number;i++)
 			{
 				data += '<li class="person">'
-<<<<<<< HEAD
-					 +  lines[i]
-=======
 					 +  people[i]
->>>>>>> alpha0.9
 					 +  '</li>';
 			}
 			$("#list_people").html(data);
@@ -72,12 +64,8 @@ function DisplayMessages()
 			}
 			$("#chat_text").html(data);
 		}
-<<<<<<< HEAD
-	);
-=======
 	);
 	$("#chat_window").scrollTop($("#chat_window")[0].scrollHeight);
->>>>>>> alpha0.9
 }
 
 function SendPrivateMessage(person)
@@ -107,23 +95,15 @@ function getLanguages()
 }
 
 getLanguages();
-<<<<<<< HEAD
-			
-$(document).ready(
-	function()
-	{
-=======
 
 
 			
 $(document).ready(
-	function()
-	{
+	function() {
 	   
 	   var user = $("#user").text();
 	   
 	   
->>>>>>> alpha0.9
 		$("#language_selector").click(
 			function()
 			{
@@ -132,11 +112,6 @@ $(document).ready(
 					var url = window.location.pathname;
 					var languages = '';
 					
-<<<<<<< HEAD
-										
-					
-=======
->>>>>>> alpha0.9
 					
 					var language_number = language_list.length;
 					for(var i=0;i<language_number;i++)
@@ -161,12 +136,6 @@ $(document).ready(
 				}
 			}
 		);
-<<<<<<< HEAD
-		setInterval("DisplayMessages()", 100);
-	}
-	
-	
-=======
 		setInterval("DisplayMessages()", 1000);
 		setInterval("DisplayPeople()", 1000);
 		
@@ -182,12 +151,10 @@ $(document).ready(
 		    if(wMessage == '')
 		    {
 		        /* TODO LANG*/
-		        alert('Les champs doivent êtres remplis');
-		    } 
-		    else if(user == '')
-		    {
-		        /* TODO LANG*/
-		        alert('Vous n\'êtes pas connecté, vous pouvez seulement observer');
+		        //alert('Les champs doivent êtres remplis');
+				$("#wMessage").val('...?').delay(100).val('');
+				//alert('oqsij');
+				
 		    }
 		    else 
 		    {
@@ -196,7 +163,8 @@ $(document).ready(
 		        {
 		        	wPerson:user,
 		        	wMessage:wMessage
-		        });
+		        }, DisplayMessages());
+				$("#wMessage").val('');
 		    }
 		    
 		    
@@ -206,23 +174,65 @@ $(document).ready(
     	$("#disconnect").on("submit", 
        	function()
        	{
-       	   alert('deconnexion');
+       	   //alert('deconnexion');
        	   $.post("disconnect.php",
        	   {
        	      dPerson:user
        	   });
        	   
        	}
-      );
-    $(window).on('unload', function()
-      {
-      $.post("disconnect.php",
-         {
-       	      dPerson:user
-         });
-      });	
+        );
+		$(window).on('unload', function()
+		  {
+		  $.post("disconnect.php",
+			 {
+				  dPerson:user
+			 });
+		});	
+		$("#bold_button").click( function() {
+			var t = $("#wMessage");
+			t.val('<b>'+t.val()+'</b>');
+		});
+		$("#italic_button").click( function() {
+			var t = $("#wMessage");
+			t.val('<i>'+t.val()+'</i>');
+		});
+		$("#underlined_button").click( function() {
+			var t = $("#wMessage");
+			t.val('<u>'+t.val()+'</u>');
+		});
+		$("#red_button").click( function() {
+			var t = $("#wMessage");
+			t.val('<span style="color:red">'+t.val()+'</span>');
+		});
+		$("#green_button").click( function() {
+			var t = $("#wMessage");
+			t.val('<span style="color:green">'+t.val()+'</span>');
+		});
+		$("#blue_button").click( function() {
+			var t = $("#wMessage");
+			t.val('<span style="color:blue">'+t.val()+'</span>');
+		});
+		$("#orange_button").click( function() {
+			var t = $("#wMessage");
+			t.val('<span style="color:darkOrange">'+t.val()+'</span>');
+		});
+		$("#indigo_button").click( function() {
+			var t = $("#wMessage");
+			t.val('<span style="color:indigo">'+t.val()+'</span>');
+		});
+		$("#teal_button").click( function() {
+			var t = $("#wMessage");
+			t.val('<span style="color:teal">'+t.val()+'</span>');
+		});
+		$("#green_yellow_button").click( function() {
+			var t = $("#wMessage");
+			t.val('<span style="color:greenYellow">'+t.val()+'</span>');
+		});
+		
+		$
+		$
 	}
->>>>>>> alpha0.9
 );
 
 

@@ -1,24 +1,20 @@
+<?php
+	//session_start();
+	//$_SESSION['zzChat'] = "true";
+?>
+
 <!DOCTYPE html>
 
 <html>
 	<head>
 	
 		<?php 
-<<<<<<< HEAD
-		$language=$_GET['lang'];
-		if(!isset($language) || empty($language))
-		{
-			$language = 'en';
-		}
-		include('lang/lang_'.$language.'.php');
-=======
 		   $language=$_GET['lang'];
 		   if(!isset($language) || empty($language))
 		   {
 			   $language = 'en';
 		   }
 		   include('lang/lang_'.$language.'.php');
->>>>>>> alpha0.9
 		?>
 		
 		<title><?= $lang['TITLE'] ?></title>
@@ -36,19 +32,15 @@
 			<div id="main">
 				<div id="login_window">
 					<h2><?= $lang['TITLE'] ?></h2>
-<<<<<<< HEAD
-					<h3><?= $lang['GREETING'] ?></h3>
-					<a href="zzChat2.php?lang=<?= $language ?>"><div class="button" id="connection_button"> <h5><?= $lang['CONNECTION'] ?></h5> </div></a>
-=======
 					<h3><?= $lang['GREETING'] ?></h3>
 					<!-- todo : zzChat15.php, pseudo vide, redirection -->
-					<form id="connection" onsubmit="connect()" method="post">
-							<input type="text" id="user" name="user" /><br/>
+					<form id="connection" action="zzChat2.php" onsubmit="return connect()" method="post">
+							<input type="text" id="user" name="user" onkeyup="validate()" value="<?= $_COOKIE['user'] ?>"/><br/>
 							<input type="submit" id="connection_button" value="GO" />
 							
 					</form>
+					<div id="error"></div>
 					<!--<a href="zzChat2.php?lang=<?= $language ?>"><div class="button" id="connection_button"> <h5><?= $lang['CONNECTION'] ?></h5> </div></a>-->
->>>>>>> alpha0.9
 					
 				</div>
 			</div>
@@ -57,12 +49,6 @@
 			</div>
 		</div>
 		
-<<<<<<< HEAD
-	</body>
-	
-	<script type="text/javascript" src="script_zzChat.js"></script> 
-=======
 		<script type="text/javascript" src="script_zzChat.js" ></script> 
 	</body>
->>>>>>> alpha0.9
 </html>

@@ -1,13 +1,27 @@
+<?php
+	/*if($_SESSION['zzChat'] != "true"){
+		header("Location: zzChat.php");
+	}*/
+	
+
+if(! empty($_POST['user']))
+   {
+	  
+		if(file_exists('data/users/user_'.$_POST['user']) && is_readable('data/users/user_'.$_POST['user']))
+			echo "User already connected";
+		else
+		{
+			$handle = fopen('data/users/user_'.$_POST['user'], 'w');
+			fwrite($handle, $_POST['user']);
+		
+			setcookie("user", $_POST['user']);
+?>
+
 <!DOCTYPE html>
 
 <html>
-<<<<<<< HEAD
-	<head>
-	
-=======
 	<head>
 	   
->>>>>>> alpha0.9
 		<?php 
 		$language=$_GET['lang'];
 		if(!isset($language) || empty($language))
@@ -27,17 +41,6 @@
 	<body>
 		<div id="container">
 			<div id="header">
-<<<<<<< HEAD
-				<!-- the dynamic language selector -->
-				<div id="language_selector"><?= $lang['LANG'] ?></div>
-				<div id="language_item"></div>
-			</div>
-			
-			<div id="main">
-				<div id="chat_window">
-					<ul id="chat_text">
-					</ul>
-=======
 				<div id="language_selector"><?= $lang['LANG'] ?></div>
 				<div id="language_item"></div>
 				<form id="disconnect" action="zzChat.php" method="post">
@@ -48,7 +51,7 @@
 			<div id="main">
 				<div id="chat_window">
 				   <!-- TODO A METTRE DANS LANG -->
-				   <div>Au revoir </div><div id="user"><?= $_POST['user'] ?></div>
+				   <span><?= $lang['GREETING'] ?> </span><span id="user"><?= $_POST['user'] ?></span>
 					<ul id="chat_text">
 					</ul>
 					
@@ -56,8 +59,17 @@
 							<input type="text" id="wMessage" />
 							<input type="submit" id="send_button" value=">" />
 					</form>
+					<span id="bold_button" class="formatting_button">o</span>
+					<span id="italic_button" class="formatting_button">o</span>
+					<span id="underlined_button" class="formatting_button">o</span>
+					<span id="red_button" class="formatting_button">o</span>
+					<span id="green_button" class="formatting_button">o</span>
+					<span id="blue_button" class="formatting_button">o</span>
+					<span id="orange_button" class="formatting_button">o</span>
+					<span id="indigo_button" class="formatting_button">o</span>
+					<span id="teal_button" class="formatting_button">o</span>
+					<span id="green_yellow_button" class="formatting_button">o</span>
 					
->>>>>>> alpha0.9
 				</div>
 				<div id="people_window">
 					<h2><?= $lang['PEOPLE'] ?></h2>
@@ -68,19 +80,21 @@
 			
 			<div id="footer">
 			</div>
-<<<<<<< HEAD
-		</div>
-	</body>
-	
-	
-	<script type="text/javascript" src="script_zzChat2.js"></script> 
-=======
 		</div>
 		<script type="text/javascript" src="script_zzChat2.js"></script> 
 	</body>
 	
 	
 	
->>>>>>> alpha0.9
 	
 </html>
+
+<?php
+		}
+		
+   }
+   else
+   {
+      echo "Error";
+   }
+?>

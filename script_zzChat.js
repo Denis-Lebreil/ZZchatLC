@@ -1,6 +1,8 @@
 var language_menu_open = false;
 var language_list;
 
+var submissible = false;
+
 function getLanguages()
 {
 	
@@ -13,12 +15,9 @@ function getLanguages()
 }
 
 
-<<<<<<< HEAD
-=======
 
 
 getLanguages();
->>>>>>> alpha0.9
 			
 $(document).ready(
 	function()
@@ -32,11 +31,7 @@ $(document).ready(
 					var languages = '';
 					
 										
-<<<<<<< HEAD
-					getLanguages();
-=======
 					
->>>>>>> alpha0.9
 					
 					var language_number = language_list.length;
 					for(var i=0;i<language_number;i++)
@@ -60,94 +55,66 @@ $(document).ready(
 					language_menu_open = false;
 				}
 			}
-<<<<<<< HEAD
 		);
-=======
-		);
-		
-		/*$("#connection_button").click(
-		   function()
-		   {
-		      var user = "default user";
-		      
-		      if(user == '') 
-		      {
-		          alert('Les champs doivent êtres remplis');
-		      } 
-		      else 
-		      {
-		         alert('appel ajax');
-		         // appel Ajax
-		         $.post("connect.php",
-		         {
-		         	user:user
-		         });
-		      }
-		   }
-		);*/
-		/*$("#connection").on('submit', //connect() );
-		   function()
-		   {
-		      var user = $("#user").val();
-		      
-		      
-		      //user = "ba";
-		      
-		      if(user == '')
-		      {
-		         // TODO LANG 
-		          alert('Vous vous connectez en observateur.');
-		      }
-		      else 
-		      {
-		         // appel Ajax
-		         $.post("connect.php",
-		         {
-		         	user:user
-		         }, function (data)
-		            {
-                     alert("Data: " + data);
-                  }
-	            );
-		      }
-		   }
-		   //connect()
-		   );*/
->>>>>>> alpha0.9
 	}
 );
 
 
-<<<<<<< HEAD
-=======
-function connect()
+
+function connect() {
+	if(connect.count == undefined)
+		connect.count = 1;
+	else
+		connect.count ++;
+	
+	$("#error").css("text-color","red").animate({fontSize:'+='+3*connect.count+'px'}, "fast").animate({fontSize:'-='+3*connect.count+'px'}, "fast").css("text-color","black");
+	return submissible;
+	
+}
+
+function validate()
 {
    var user = $("#user").val();
+   var user0 = user;
+   user = user.replace(/[^a-z0-9\s]/gi, '');
    
-   alert('appel : connect()');
+   submissible = false;
    
-   //user = "ba";
-   
-   if(user == '')
+   if(user0 !== user)
    {
-      /* TODO LANG */
-       alert('Vous vous connectez en observateur.');
+		$("#error").html("("+user+")");
+		
+   }
+   else if(user == '')
+   {
+		$("#error").html("?");	
    }
    else 
    {
-      // appel Ajax
-      //$.post("connect.php",{user:user},function(data){alert("Data:");});
-      //$.post( "connect.php", { user:user }).done(function( data ) {alert( "Data Loaded: " + data );});
-      //$.post("connect.php",{user:user},alert("Data:"));
-      
-      var posting = $.get("conn2.php",{user:user});
-      posting.done(
-         function(){
-            alert('dada');
-            }
-            );
+	  $.post("validate_user.php", {user:user},
+		function(data)
+		{
+			data = data.substring(0,data.length - 2);
+			if(data == 'Connection')
+			{
+				$("#error").html(":)");
+				submissible = true;
+			}
+			else if(data == 'User already connected')
+			{
+				//TODO LANG
+				$("#error").html("!");
+				submissible = false;
+			}
+			else
+			{
+				$("#error").html("!");
+				submissible = false;
+			}
+		}
+	  );
+   
    }
 }
 
 
->>>>>>> alpha0.9

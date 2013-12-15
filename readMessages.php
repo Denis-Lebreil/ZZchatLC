@@ -1,9 +1,4 @@
 <?php
-<<<<<<< HEAD
-	echo readfile('data/messages.txt');
-?>
-
-=======
 	readfile('data/messages.txt');
 ?>
 
@@ -32,4 +27,3 @@ while ($char !== false && $char !== "\n" && $char !== "\r") {
 
 echo $line;*/
 ?>
->>>>>>> alpha0.9

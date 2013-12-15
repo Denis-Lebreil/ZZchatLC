@@ -9,4 +9,5 @@ $lang['CONNECTION'] = '';
 $lang['GREETING'] = '';
 $lang['PEOPLE'] = '';
 
+
 ?>

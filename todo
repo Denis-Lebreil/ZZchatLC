@@ -3,9 +3,14 @@ todo
 X var Person ~globale
 X  |-> deconnexion
 X connexion pseudo vide
-  connexion occupé impossible, redirection
+X connexion occupé impossible, redirection
 X liste gens connectés
 X barre scroll automatique
-  cookies
-  securite
+X  cookies
+  securite !!
+  meilleur formatage (option)
+  check session (module php5_session)
+  css boutons formatage
+  c'est moche
+  notification (option)
   
