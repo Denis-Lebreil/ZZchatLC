@@ -1,7 +1,7 @@
 <?php
-	if($_SESSION['zzChat'] != "true"){
-		header("Location: zzChat.php");
-	}
+	//if($_SESSION['zzChat'] != "true"){
+	//	header("Location: zzChat.php");
+	//}
 	
 	include('sanitize.php');
 

@@ -1,6 +1,4 @@
 <?php
-	//readdir('data/users/');
-?><?php
 	
 if($handle = opendir('data/users'))
 {

@@ -193,39 +193,39 @@ $(document).ready(
 		});	
 		$("#bold_button").click( function() {
 			var t = $("#wMessage");
-			t.val('<b>'+t.val()+'</b>');
+			t.val('[b]'+t.val()+'[/b]');
 		});
 		$("#italic_button").click( function() {
 			var t = $("#wMessage");
-			t.val('<i>'+t.val()+'</i>');
+			t.val('[i]'+t.val()+'[/i]');
 		});
 		$("#underlined_button").click( function() {
 			var t = $("#wMessage");
-			t.val('<u>'+t.val()+'</u>');
+			t.val('[u]'+t.val()+'[/u]');
 		});
 		$("#red_button").click( function() {
 			var t = $("#wMessage");
-			t.val('<span style="color:red">'+t.val()+'</span>');
+			t.val('[red]'+t.val()+'[/red]');
 		});
 		$("#green_button").click( function() {
 			var t = $("#wMessage");
-			t.val('<span style="color:green">'+t.val()+'</span>');
+			t.val('[green]'+t.val()+'[/green]');
 		});
 		$("#blue_button").click( function() {
 			var t = $("#wMessage");
-			t.val('<span style="color:blue">'+t.val()+'</span>');
+			t.val('[blue]'+t.val()+'[/blue]');
 		});
 		$("#orange_button").click( function() {
 			var t = $("#wMessage");
-			t.val('<span style="color:darkOrange">'+t.val()+'</span>');
+			t.val('[orange]'+t.val()+'[/orange]');
 		});
 		$("#indigo_button").click( function() {
 			var t = $("#wMessage");
-			t.val('<span style="color:indigo">'+t.val()+'</span>');
+			t.val('[indigo]'+t.val()+'[/indigo]');
 		});
 		$("#teal_button").click( function() {
 			var t = $("#wMessage");
-			t.val('<span style="color:teal">'+t.val()+'</span>');
+			t.val('[teal]'+t.val()+'[/teal]');
 		});
 		
 		$("#down_button").hide();
