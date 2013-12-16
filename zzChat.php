@@ -1,6 +1,9 @@
 <?php
-	//session_start();
-	//$_SESSION['zzChat'] = "true";
+	session_start();
+	$_SESSION['zzChat'] = "true";
+	
+	include('sanitize.php');
+	
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +12,8 @@
 	<head>
 	
 		<?php 
-		   $language=$_GET['lang'];
+		   $language=sanitizeStrict($_GET['lang']);
+		   
 		   if(!isset($language) || empty($language))
 		   {
 			   $language = 'en';
@@ -26,7 +30,7 @@
 		<div id="container">
 			<div id="header">
 				<div id="language_selector"><?= $lang['LANG'] ?></div>
-				<div id="language_item"></div>
+				<span id="language_item"></span>
 			</div>
 			
 			<div id="main">

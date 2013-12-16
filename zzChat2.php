@@ -1,20 +1,22 @@
 <?php
-	/*if($_SESSION['zzChat'] != "true"){
+	if($_SESSION['zzChat'] != "true"){
 		header("Location: zzChat.php");
-	}*/
+	}
 	
+	include('sanitize.php');
+
 
 if(! empty($_POST['user']))
-   {
-	  
-		if(file_exists('data/users/user_'.$_POST['user']) && is_readable('data/users/user_'.$_POST['user']))
-			echo "User already connected";
-		else
-		{
-			$handle = fopen('data/users/user_'.$_POST['user'], 'w');
-			fwrite($handle, $_POST['user']);
+{
+	if(file_exists('data/users/user_'.$_POST['user']) && is_readable('data/users/user_'.$_POST['user']))
+		echo "User already connected";
+	else
+	{
 		
-			setcookie("user", $_POST['user']);
+		$handle = fopen('data/users/user_'.sanitizeStrict($_POST['user']), 'w');
+		fwrite($handle, $_POST['user']);
+	
+		setcookie("user", $_POST['user']);
 ?>
 
 <!DOCTYPE html>
@@ -41,8 +43,8 @@ if(! empty($_POST['user']))
 	<body>
 		<div id="container">
 			<div id="header">
-				<div id="language_selector"><?= $lang['LANG'] ?></div>
-				<div id="language_item"></div>
+				<!--<div id="language_selector"><?= $lang['LANG'] ?></div>
+				<div id="language_item"></div>-->
 				<form id="disconnect" action="zzChat.php" method="post">
 							<input type="submit" id="disconnect_button" value="Disconnect" />
 			   </form>
@@ -59,16 +61,17 @@ if(! empty($_POST['user']))
 							<input type="text" id="wMessage" />
 							<input type="submit" id="send_button" value=">" />
 					</form>
-					<span id="bold_button" class="formatting_button">o</span>
-					<span id="italic_button" class="formatting_button">o</span>
-					<span id="underlined_button" class="formatting_button">o</span>
-					<span id="red_button" class="formatting_button">o</span>
-					<span id="green_button" class="formatting_button">o</span>
-					<span id="blue_button" class="formatting_button">o</span>
-					<span id="orange_button" class="formatting_button">o</span>
-					<span id="indigo_button" class="formatting_button">o</span>
-					<span id="teal_button" class="formatting_button">o</span>
-					<span id="green_yellow_button" class="formatting_button">o</span>
+					<span id="bold_button" class="formatting_button"><b>B</b></span>
+					<span id="italic_button" class="formatting_button"><i>I</i></span>
+					<span id="underlined_button" class="formatting_button"><u>U</u></span>
+					<span id="red_button" class="formatting_button" style="color:red;">R</span>
+					<span id="green_button" class="formatting_button" style="color:green;">G</span>
+					<span id="blue_button" class="formatting_button" style="color:blue;">B</span>
+					<span id="orange_button" class="formatting_button" style="color:darkOrange;">O</span>
+					<span id="indigo_button" class="formatting_button" style="color:indigo;">I</span>
+					<span id="teal_button" class="formatting_button" style="color:teal;">T</span>
+					<span id="up_button" class="button">UP</span>
+					<span id="down_button" class="button">DOWN</span>
 					
 				</div>
 				<div id="people_window">

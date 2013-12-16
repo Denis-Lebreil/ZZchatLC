@@ -40,9 +40,9 @@ $(document).ready(
 									' <a href="'+url
 									+'?lang='
 									+language_list[i]
-									+'"><div id="language_item">'
+									+'"><span id="language_item">'
 									+language_list[i]
-									+'</div></a>';
+									+'</span></a>';
 					}
 					
 					$("#language_item").html(languages);
@@ -94,13 +94,14 @@ function validate()
 	  $.post("validate_user.php", {user:user},
 		function(data)
 		{
-			data = data.substring(0,data.length - 2);
-			if(data == 'Connection')
+			//data = data.substring(0,data.length - 2);
+			
+			if(data[0] == 'C')
 			{
 				$("#error").html(":)");
 				submissible = true;
 			}
-			else if(data == 'User already connected')
+			else if(data[0] == 'U')
 			{
 				//TODO LANG
 				$("#error").html("!");

@@ -1,4 +1,3 @@
-
 function Connect(person)
 {
 	$.post("connect.php",
@@ -65,7 +64,10 @@ function DisplayMessages()
 			$("#chat_text").html(data);
 		}
 	);
-	$("#chat_window").scrollTop($("#chat_window")[0].scrollHeight);
+	if(scroll_down)
+	{
+		$("#chat_window").scrollTop($("#chat_window")[0].scrollHeight);
+	}
 }
 
 function SendPrivateMessage(person)
@@ -96,13 +98,13 @@ function getLanguages()
 
 getLanguages();
 
-
+var scroll_down = true;
 			
 $(document).ready(
 	function() {
 	   
-	   var user = $("#user").text();
-	   
+	    var user = $("#user").text();
+	    
 	   
 		$("#language_selector").click(
 			function()
@@ -225,13 +227,18 @@ $(document).ready(
 			var t = $("#wMessage");
 			t.val('<span style="color:teal">'+t.val()+'</span>');
 		});
-		$("#green_yellow_button").click( function() {
-			var t = $("#wMessage");
-			t.val('<span style="color:greenYellow">'+t.val()+'</span>');
-		});
 		
-		$
-		$
+		$("#down_button").hide();
+		$("#up_button").click( function() {
+			$("#down_button").show();
+			$("#up_button").hide();
+			scroll_down = false;
+		});
+		$("#down_button").click( function() {
+			$("#up_button").show();
+			$("#down_button").hide();
+			scroll_down = true;
+		});
 	}
 );
 
