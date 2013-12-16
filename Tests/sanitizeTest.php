@@ -1,6 +1,6 @@
 <?php
 
-require_once(__dir__.'/../sanitize.php'
+require_once(__dir__.'/../sanitize.php');
 
 class sanitizeTest extends PHPUnit_Framework_TestCase
 {
@@ -19,17 +19,17 @@ class sanitizeTest extends PHPUnit_Framework_TestCase
 	public function testsanitizeStrict()
     {
     $input = 'test';
-	$output = sanitize($input);
+	$output = sanitizeStrict($input);
 	
     $this->assertEquals( $output , 'test' , 'fail sanitizeStrict '.$input);
 
 	$input = 'test&';
-	$output = sanitize($input);
+	$output = sanitizeStrict($input);
 	
     $this->assertEquals( $output , 'test' , 'fail sanitizeStrict '.$input);
 	
     $input = 'test#';
-	$output = sanitize($input);
+	$output = sanitizeStrict($input);
 	
     $this->assertEquals( $output , 'test' , 'fail sanitizeStrict '.$input);	
 	
