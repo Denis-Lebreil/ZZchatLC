@@ -40,17 +40,17 @@ class sanitizeTest extends PHPUnit_Framework_TestCase
     $input = 'test';
 	$output = sanitize($input);
 	
-    $this->assertEquals( $output , 'test' , 'fail sanitizeStrict '.$input);
+    $this->assertEquals( $output , 'test' , 'fail sanitize '.$input);
 
     $input = 'test&';
 	$output = sanitize($input);
 	
-    $this->assertEquals( $output , 'test&' , 'fail sanitizeStrict '.$input);
+    $this->assertEquals( $output , 'test&amp;' , 'fail sanitize '.$input);
 
     $input = 'test#';
 	$output = sanitize($input);
 	
-    $this->assertEquals( $output , 'test' , 'fail sanitizeStrict '.$input);	
+    $this->assertEquals( $output , 'test#' , 'fail sanitize '.$input);	
 
 	return false;
     }

@@ -54,7 +54,7 @@ if(! empty($_POST['user']))
 				<div id="chat_window">
 				   <!-- TODO A METTRE DANS LANG -->
 				   <span><?= $lang['GREETING'] ?> </span><span id="user"><?= $_POST['user'] ?></span>
-					<ul id="chat_text">
+					<ul id="chat_text">bonjour
 					</ul>
 					
 					<form id="send_message" action="writeMessage.php" method="post">

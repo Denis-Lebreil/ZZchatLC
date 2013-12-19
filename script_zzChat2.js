@@ -51,7 +51,7 @@ function DisplayMessages()
 	$.get("readMessages.php",
 		function(data)
 		{
-			var lines = data.split('\n');
+			var lines = data.split('<br/>');
 			var lines_number = lines.length;
 			data = '';
 			
@@ -68,6 +68,7 @@ function DisplayMessages()
 	{
 		$("#chat_window").scrollTop($("#chat_window")[0].scrollHeight);
 	}
+	
 }
 
 function SendPrivateMessage(person)
