@@ -1,24 +1,22 @@
 
 <?php
 
-   include('sanitize.php');
-   
-	echo $_POST['wPerson'].' : '.$_POST['wMessage'];
-	/*if(!empty($_POST['wMperson']) && !empty($_POST['wMmessage']))
-	{*/
-		$handle = fopen('data/messages.txt', 'a');
+	/* we include the sanitize functions */
+	include('sanitize.php');
+	
+	$handle = fopen('data/messages.txt', 'a');
+	
+	if(!empty($handle))
+	{
+		/* we sanitize the input text */
+		$text = $_POST["wPerson"].' : '.sanitize($_POST["wMessage"]).'<br/>';
 		
-		if(!empty($handle))
-		{
-			$text = $_POST["wPerson"].' : '.sanitize($_POST["wMessage"]).'<br/>';
-			
-			//fwrite($handle, $text); /* DOUBLES QUOTES? */
-			fwrite($handle, $text);
-         
-			fclose($handle);
-		}
+		/* then write in the messages file */
+		fwrite($handle, $text);
+	 
+		fclose($handle);
+	}
 		
-	/*}*/
 
 ?>
 

@@ -1,3 +1,3 @@
 <?php
-	echo readfile('data/messages.txt');
+	readfile('data/messages.txt');
 ?>

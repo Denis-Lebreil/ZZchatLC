@@ -2,8 +2,10 @@
 
    function sanitize($input)
    {
+	  /* first we clean the input of all html for security */
       $output = htmlentities($input);
 	  
+	  /* then we transform BBcode into html */
 	  $output = preg_replace("#\[b\]#i", "HOHO", $output);
 	  $output = preg_replace("#\[\/b\]#i", "HAHA", $output);
 	  $output = preg_replace("#\[i\]#i", "<i>", $output);
@@ -28,6 +30,7 @@
    
    function sanitizeStrict($input)
 	{
+		/* we allow only alphanumeric characters and '_' */
 		return preg_replace("/script|[^_A-Za-z0-9]/i",'', $input);
 	}
 	
