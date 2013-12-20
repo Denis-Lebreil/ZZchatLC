@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="Tests" tests="3" assertions="9" failures="0" errors="0" time="0.029805">
-    <testsuite name="sanitizeTest" file="/home/satullya/ZZ2/Web/ZZchatLC/Tests/sanitizeTest.php" tests="3" assertions="9" failures="0" errors="0" time="0.029805">
-      <testcase name="testTrue" class="sanitizeTest" file="/home/satullya/ZZ2/Web/ZZchatLC/Tests/sanitizeTest.php" line="12" assertions="1" time="0.005388"/>
-      <testcase name="testsanitizeStrict" class="sanitizeTest" file="/home/satullya/ZZ2/Web/ZZchatLC/Tests/sanitizeTest.php" line="20" assertions="3" time="0.015512"/>
-      <testcase name="testsanitize" class="sanitizeTest" file="/home/satullya/ZZ2/Web/ZZchatLC/Tests/sanitizeTest.php" line="42" assertions="5" time="0.008905"/>
+  <testsuite name="Tests" tests="3" assertions="9" failures="0" errors="0" time="0.028076">
+    <testsuite name="sanitizeTest" file="/home/satullya/ZZ2/Web/ZZchatLC/Tests/sanitizeTest.php" tests="3" assertions="9" failures="0" errors="0" time="0.028076">
+      <testcase name="testTrue" class="sanitizeTest" file="/home/satullya/ZZ2/Web/ZZchatLC/Tests/sanitizeTest.php" line="12" assertions="1" time="0.004730"/>
+      <testcase name="testsanitizeStrict" class="sanitizeTest" file="/home/satullya/ZZ2/Web/ZZchatLC/Tests/sanitizeTest.php" line="20" assertions="3" time="0.016633"/>
+      <testcase name="testsanitize" class="sanitizeTest" file="/home/satullya/ZZ2/Web/ZZchatLC/Tests/sanitizeTest.php" line="42" assertions="5" time="0.006713"/>
     </testsuite>
   </testsuite>
 </testsuites>
