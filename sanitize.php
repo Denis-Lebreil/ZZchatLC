@@ -6,8 +6,8 @@
       $output = htmlentities($input);
 	  
 	  /* then we transform BBcode into html */
-	  $output = preg_replace("#\[b\]#i", "HOHO", $output);
-	  $output = preg_replace("#\[\/b\]#i", "HAHA", $output);
+	  $output = preg_replace("#\[b\]#i", "<b>", $output);
+	  $output = preg_replace("#\[\/b\]#i", "</b>", $output);
 	  $output = preg_replace("#\[i\]#i", "<i>", $output);
 	  $output = preg_replace("#\[\/i\]#i", "</i>", $output);
 	  $output = preg_replace("#\[u\]#i", "<u>", $output);
