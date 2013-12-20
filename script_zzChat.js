@@ -82,7 +82,7 @@ function validate() {
         $("#error").html("?");
     } else /* the field looks ok ... **/ {
         /* we test if somebody online has the same nickname */
-        $.post("validate_user.php", {
+        $.post("validateUser.php", {
                 user: user
             },
             function (data) {
